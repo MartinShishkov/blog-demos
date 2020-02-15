@@ -1,0 +1,34 @@
+﻿@model string
+
+<form method="post" action="@Model">
+    <div>
+        <input type="text" name="firstName" placeholder="First name" />
+    </div>
+    <div>
+        <input type="text" name="lastName" placeholder="Last name" />
+    </div>
+    <div>
+        <label for="age">Age:</label>
+        <input type="number" step="1" id="age" name="age" value="18" placeholder="Age" />
+    </div>
+
+    <div>
+        <label for="consent1">
+            <input type="checkbox" id="consent1" name="consent" value="yes" />
+            I give my consent for everything
+        </label>
+        <label for="consent2">
+            <input type="checkbox" id="consent2" name="consent" value="no" />
+            I DENY ALL
+        </label>
+    </div>
+    <hr />
+    <div>
+        <label for="simulateServerError">
+            <input type="checkbox" id="simulateServerError" name="simulateServerError" value="yes" />
+            Simulate a server error
+        </label>
+    </div>
+
+    <input type="submit" value="FIRE!" />
+</form>

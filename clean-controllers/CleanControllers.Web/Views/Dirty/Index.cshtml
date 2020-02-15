@@ -1,0 +1,7 @@
+﻿@{
+    ViewData["Title"] = "Dirty";
+}
+
+<h3>This looks just fine, however we've got issues in the backend</h3>
+
+@await Html.PartialAsync("_SimpleForm", Url.Action("DoStuff", "Dirty"))

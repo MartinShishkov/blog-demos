@@ -11,8 +11,8 @@ namespace _205.Isomorphic_Strings
             Console.WriteLine(AreIsomorphic("ab", "aa"));
 
             /*
-               Runtime: 112 ms, faster than 25.00% of C# online submissions for Isomorphic Strings.
-               Memory Usage: 24.8 MB, less than 15.97% of C# online submissions for Isomorphic Strings.
+               Runtime: 120 ms, faster than 21.31% of C# online submissions for Isomorphic Strings.
+                Memory Usage: 23.4 MB, less than 66.39% of C# online submissions for Isomorphic Strings.
              */
         }
 
@@ -25,22 +25,21 @@ namespace _205.Isomorphic_Strings
             if (str1?.Length != str2.Length) return false;
 
             var map = new Dictionary<char, char>();
+            var reverseMap = new Dictionary<char, char>();
             var length = str1.Length;
             for (int i = 0; i < length; i++)
             {
                 var key = str1[i];
                 var value = str2[i];
 
-                if (map.ContainsKey(key))
-                {
-                    if (value != map[key]) return false;
+                if (map.ContainsKey(key) && value != map[key])
+                    return false;
 
-                    continue;
-                }
+                if (reverseMap.ContainsKey(value) && key != reverseMap[value])
+                    return false;
 
-                if (map.Values.Any(v => v == value)) return false;
-
-                map.Add(key, value);
+                map.TryAdd(key, value);
+                reverseMap.TryAdd(value, key);
             }
 
             return true;

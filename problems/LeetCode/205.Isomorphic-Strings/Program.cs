@@ -45,26 +45,5 @@ namespace _205.Isomorphic_Strings
 
             return true;
         }
-
-        public static int[] GetStringMask(string str)
-        {
-            if(string.IsNullOrEmpty(str)) return new int[0];
-
-            var count = 0;
-            var map = new Dictionary<char,int>();
-            var mask = new int[str.Length];
-            
-            for (int i = 0; i < str.Length; i++)
-            {
-                if (map.ContainsKey(str[i]) == false)
-                {
-                    map[str[i]] = ++count;
-                }
-
-                mask[i] = map[str[i]];
-            }
-
-            return mask;
-        }
     }
 }

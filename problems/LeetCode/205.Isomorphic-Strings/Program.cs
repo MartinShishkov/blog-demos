@@ -11,8 +11,8 @@ namespace _205.Isomorphic_Strings
             Console.WriteLine(AreIsomorphic("ab", "aa"));
 
             /*
-               Runtime: 180 ms, faster than 5.18% of C# online submissions for Isomorphic Strings.
-               Memory Usage: 24 MB, less than 16.54% of C# online submissions for Isomorphic Strings.
+               Runtime: 112 ms, faster than 25.00% of C# online submissions for Isomorphic Strings.
+               Memory Usage: 24.8 MB, less than 15.97% of C# online submissions for Isomorphic Strings.
              */
         }
 
@@ -24,10 +24,26 @@ namespace _205.Isomorphic_Strings
 
             if (str1?.Length != str2.Length) return false;
 
-            var mask1 = GetStringMask(str1);
-            var mask2 = GetStringMask(str2);
+            var map = new Dictionary<char, char>();
+            var length = str1.Length;
+            for (int i = 0; i < length; i++)
+            {
+                var key = str1[i];
+                var value = str2[i];
 
-            return mask1.SequenceEqual(mask2);
+                if (map.ContainsKey(key))
+                {
+                    if (value != map[key]) return false;
+
+                    continue;
+                }
+
+                if (map.Values.Any(v => v == value)) return false;
+
+                map.Add(key, value);
+            }
+
+            return true;
         }
 
         public static int[] GetStringMask(string str)

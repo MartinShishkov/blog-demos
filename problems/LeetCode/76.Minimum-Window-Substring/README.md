@@ -19,5 +19,6 @@ If there is no such window in S that covers all characters in T, return the empt
 If there is such window, you are guaranteed that there will always be only one unique minimum window in S.
 
 **This problem was given to me in an interview with SBTech**
+
 It was the 1 of 3 problems at HackerRank, but I couldn't find it there
 so I managed to get it in LeetCode

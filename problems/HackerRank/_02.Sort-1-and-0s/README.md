@@ -10,6 +10,9 @@ sort the array. The direction of sorting does not matter.
 Example:
 
 [1, 1, 1, 0, 0, 0] => 0
+
 [0, 0, 0, 1, 1, 1] => 0
+
 [1, 0, 1, 0, 0, 0] => 1
+
 [1, 0, 0, 1, 0, 1, 1, 0, 0, 1] => 12

@@ -21,7 +21,7 @@ namespace _02.Sort_1_and_0s
             {
                 for (var j = 0; j < n - i - 1; j++)
                 {
-                    if (comparer(arr[j], arr[j + 1])) // arr[j] < arr[j + 1]
+                    if (comparer(arr[j], arr[j + 1]))
                     { 
                         var temp = arr[j]; 
                         arr[j] = arr[j + 1]; 
